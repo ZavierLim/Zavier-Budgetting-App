@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <h1>Your Budget By Category</h1>
+    <table class="table border">
+        <thead>
+            <tr>
+            <th>Category</th>
+            <th>Amount Spent</th>
+            <th>Total Budget</th>
+            <th>Remaining Budget(+)/Deficit Budget(-)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in Stocks %}
+            <tr>
+                <td>{{stock.category}}</td>
+                <td>{{stock.budget }}</td>
+                <td>{{stock.totalbudget }}</td>
+                <td>{{stock.remaining}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

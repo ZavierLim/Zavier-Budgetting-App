@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <form action="/add" method="post">
+        <h4>Category</h4>
+        <div class="form-group">
+            <select class="form-control" name="category" id="symbol">
+                <option disabled="" selected="" value="">Category</option>
+                    {% for category in categories %}
+                    <option value = "{{category.category}}">{{category.category}}</option>
+                    {% endfor %}
+            </select>
+        </div>
+
+        <div>
+            <h4>Amount</h4>
+            <input autocomplete="off" autofocus class="form-control" name="amount" placeholder="$ Amount" type="number">
+        </div>
+
+        <div>
+            <h4>Notes</h4>
+            <input autocomplete="off" autofocus class="form-control" name="notes" placeholder="Notes" type="text">
+        </div>
+
+        <div class="text-left">
+        <button class="btn btn-primary" type="submit"> Submit</button>
+        </div>
+    </form>
+{% endblock %}

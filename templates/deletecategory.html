@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <form action="/deletecategory" method="post">
+        <div class="form-group">
+            <h4>Existing Category</h4>
+        <div class="form-group">
+            <select class="form-control" name="deletecategory" id="delete">
+                <option disabled="" selected="" value="">Existing Categories</option>
+                    {% for category in categories %}
+                    <option value = "{{category.category}}">{{category.category}}</option>
+                    {% endfor %}
+            </select>
+        </div>
+
+        <div class="text-left">
+        <button class="btn btn-primary" type="submit"> Submit</button>
+        </div>
+
+    </form>
+{% endblock %}

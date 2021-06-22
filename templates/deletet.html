@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <form action="/deletet" method="post">
+        <div class="form-group">
+            <h4>Existing transaction</h4>
+        <div class="form-group">
+            <select class="form-control" name="deletet" id="delete">
+                <option disabled="" selected="" value="">Existing transactions</option>
+                    {% for transaction in transactions %}
+                    <option value = "{{transaction.datetime}}">{{"Category:",transaction.category,"Amount:",transaction.addamount,"Notes:",transaction.notes}}</option>
+                    {% endfor %}
+            </select>
+        </div>
+
+        <div class="text-left">
+        <button class="btn btn-primary" type="submit"> Delete Transaction</button>
+        </div>
+
+    </form>
+{% endblock %}
